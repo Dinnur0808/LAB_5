@@ -17,16 +17,22 @@ process.stdin.on('end', _ => {
     
     main();    
 });
+
 function readLine() {
     return inputString[currentLine++];
 }
-function greeting(parameterVariable) {
-    console.log("Hello, World!");
-    console.log(parameterVariable);
-}
 
-function main() {
-    const parameterVariable = readLine();
-    
-    greeting(parameterVariable);
+/*
+ * Complete the Rectangle function
+ */
+function Rectangle(a, b) {
+    const perimeter = 2*(a+b);
+    const area = a*b;
+    const recObject = {
+        length: a,
+        width: b,
+        perimeter: perimeter,
+        area: area
+    }
+    return recObject;
 }

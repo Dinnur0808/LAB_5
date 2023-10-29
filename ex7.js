@@ -17,16 +17,30 @@ process.stdin.on('end', _ => {
     
     main();    
 });
+
 function readLine() {
     return inputString[currentLine++];
 }
-function greeting(parameterVariable) {
-    console.log("Hello, World!");
-    console.log(parameterVariable);
-}
 
-function main() {
-    const parameterVariable = readLine();
+function getLetter(s) {
+    let letter;
+
     
-    greeting(parameterVariable);
+    const firstChar = s[0];
+    if ("aeiou".includes(firstChar)) {
+        letter = "A";
+    } else if ("bcdfg".includes(firstChar)) {
+        letter = "B";
+    } else if ("hjklm".includes(firstChar)) {
+        letter = "C";
+    } else {
+        letter = "D";
+    }
+
+    return letter;
+}
+function main() {
+    const s = readLine();
+    
+    console.log(getLetter(s));
 }

@@ -17,16 +17,30 @@ process.stdin.on('end', _ => {
     
     main();    
 });
+
 function readLine() {
     return inputString[currentLine++];
 }
-function greeting(parameterVariable) {
-    console.log("Hello, World!");
-    console.log(parameterVariable);
+
+
+function getArea(length, width) {
+    let area;
+    area =  length*width;
+    
+    return area;
+}
+function getPerimeter(length, width) {
+    let perimeter;
+    perimeter = 2*(length+width);
+    
+    return perimeter;
 }
 
+
 function main() {
-    const parameterVariable = readLine();
+    const length = +(readLine());
+    const width = +(readLine());
     
-    greeting(parameterVariable);
+    console.log(getArea(length, width));
+    console.log(getPerimeter(length, width));
 }

@@ -17,16 +17,20 @@ process.stdin.on('end', _ => {
     
     main();    
 });
+
 function readLine() {
     return inputString[currentLine++];
 }
-function greeting(parameterVariable) {
-    console.log("Hello, World!");
-    console.log(parameterVariable);
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
 }
 
 function main() {
-    const parameterVariable = readLine();
+    const n = +(readLine());
     
-    greeting(parameterVariable);
+    console.log(factorial(n));
 }
